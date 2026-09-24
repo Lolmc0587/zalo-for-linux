@@ -33,6 +33,7 @@ jobs:
     runs-on: ${{ matrix.runner }}
     outputs:
       zalo_version: ${{ steps.build.outputs.zalo_version }}
+      build: ${{ steps.build.outputs.build }}
       original_appimage_name: ${{ steps.build.outputs.original_appimage_name }}
       original_appimage_file: ${{ steps.build.outputs.original_appimage_file }}
       zadark_appimage_name: ${{ steps.build.outputs.zadark_appimage_name }}
@@ -149,6 +150,7 @@ jobs:
   release:
     name: Release the AppImages
     needs: build
+    if: needs.build.outputs.build == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: write
