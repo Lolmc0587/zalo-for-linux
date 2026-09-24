@@ -188,6 +188,8 @@ jobs:
           > - `*-Full-x86_64.AppImage` (with ZaDark)
           > - `*-PlainFull-x86_64.AppImage` (without ZaDark)
 
+          **NOTE: DO NOT download the files with `.AppImage.zsync`, they are only used for incremental updates and cannot run directly.**
+
           ## 📋 System Requirements
           - Linux x64 or aa64
           - GLIBC 2.28 or later
